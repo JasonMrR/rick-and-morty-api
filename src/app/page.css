@@ -1,4 +1,13 @@
-.container{
+.main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #272b33;
+  padding: 24px 0;
+}
+
+.items-container{
+  max-width: 1800px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

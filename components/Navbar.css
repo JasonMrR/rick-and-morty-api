@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4);
   padding: 20px;
   position: sticky;
   top: 0;
@@ -23,7 +23,7 @@
 }
 
 .logo {
-  font-size: 24px;
+  font-size: var(--xl);
   font-weight: bold;
   color: #000000;
 }
@@ -44,8 +44,23 @@
   color: #000000;
   font-weight: bold;
   transition: color 0.3s ease;
+  font-size: var(--sm);
 }
 
 .nav-links a:hover {
   color: #00bcd4;
+}
+
+@media (max-width: 767px) {
+  .navbar{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo{
+    margin-bottom: 12px;
+  }
+  .nav-links li {
+    margin: 4px;
+  }
 }

@@ -1,25 +1,19 @@
-import CardItem from "@/components/CardItem";
+'use client'
+import { useState } from 'react';
+import CharactersData from '@/components/CharactersData';
+import useFetch from '@/components/useFetch';
 import './page.css'
 
-async function FetchApi(){
-  const res = await fetch("https://rickandmortyapi.com/api/character")
-  const data = await res.json();
-  return data
-}
- 
-const Home = async () => {
-  
-  const data = await FetchApi();
+const Home = () => {
+  const [url, setUrl] = useState('https://rickandmortyapi.com/api/character');
+  const { data, isLoading, error } = useFetch(url);
 
-  console.log(data);
-  
   return (
-    <div className="container">
-      {
-        data.results?.map((item, index)=><CardItem key={index} character={item}/>)
-      }
-    </div>
+    <main className="main">
+      <CharactersData data={data}/>
+    </main>
   )
 }
+
 
 export default Home
